@@ -1,12 +1,13 @@
 import 'package:flutter_ui_base/common_libs.dart';
 
 class CompassDivider extends StatelessWidget {
-  const CompassDivider(
-      {super.key,
-      required this.isExpanded,
-      this.duration,
-      this.linesColor,
-      this.compassColor});
+  const CompassDivider({
+    super.key,
+    required this.isExpanded,
+    this.duration,
+    this.linesColor,
+    this.compassColor,
+  });
 
   final bool isExpanded;
   final Duration? duration;
@@ -22,9 +23,10 @@ class CompassDivider extends StatelessWidget {
         tween: Tween(begin: 0, end: isExpanded ? 1 : 0),
         curve: Curves.easeOut,
         child: Divider(
-            height: 1,
-            thickness: .5,
-            color: linesColor ?? $styles.colors.accent2),
+          height: 1,
+          thickness: .5,
+          color: linesColor ?? $styles.colors.secondaryLight,
+        ),
         builder: (_, value, child) {
           return Transform.scale(
             scaleX: value,
@@ -43,14 +45,9 @@ class CompassDivider extends StatelessWidget {
           duration: duration,
           tween: Tween(begin: 0, end: isExpanded ? .5 : 0),
           curve: Curves.easeOutBack,
-          builder: (_, value, child) => Transform.rotate(
-            angle: value * pi * 2,
-            child: child,
-          ),
-          child: SizedBox(
-            height: 32,
-            width: 32,
-          ),
+          builder: (_, value, child) =>
+              Transform.rotate(angle: value * pi * 2, child: child),
+          child: SizedBox(height: 32, width: 32),
         ),
         Gap($styles.insets.sm),
         Expanded(child: buildHzAnimatedDivider(alignLeft: true)),

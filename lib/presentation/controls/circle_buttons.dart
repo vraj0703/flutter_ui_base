@@ -67,7 +67,7 @@ class CircleIconBtn extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    Color defaultColor = $styles.colors.greyStrong;
+    Color defaultColor = $styles.colors.greyDark;
     Color iconColor = color ?? $styles.colors.offWhite;
     return CircleBtn(
       onPressed: onPressed,

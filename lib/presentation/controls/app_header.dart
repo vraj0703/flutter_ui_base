@@ -44,7 +44,7 @@ class AppHeader extends StatelessWidget {
                             title!.toUpperCase(),
                             textHeightBehavior: TextHeightBehavior(
                                 applyHeightToFirstAscent: false),
-                            style: $styles.text.h4.copyWith(
+                            style: $styles.text.headlineSmall.copyWith(
                               color: $styles.colors.offWhite,
                               fontWeight: FontWeight.w500,
                             ),
@@ -54,8 +54,8 @@ class AppHeader extends StatelessWidget {
                             subtitle!.toUpperCase(),
                             textHeightBehavior: TextHeightBehavior(
                                 applyHeightToFirstAscent: false),
-                            style: $styles.text.title1
-                                .copyWith(color: $styles.colors.accent1),
+                            style: $styles.text.headlineLarge
+                                .copyWith(color: $styles.colors.secondaryLight),
                           ),
                       ],
                     ),

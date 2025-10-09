@@ -1,5 +1,5 @@
 import 'package:flutter/material.dart';
-import 'package:flutter_core/domain/models/color_percentage.dart';
+import 'package:flutter_core/core/models/color_percentage.dart';
 
 import 'arc_animation.dart';
 

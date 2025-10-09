@@ -1,5 +1,5 @@
 import 'package:flutter/material.dart';
-import 'package:flutter_core/domain/models/list_bottom_sheet_item.dart';
+import 'package:flutter_core/core/models/bottom_sheet_item.dart';
 import 'package:flutter_ui_base/presentation/widgets/bottom_sheet/list_bottom_sheet.dart';
 
 Future<T?> showListBottomSheet<T>({

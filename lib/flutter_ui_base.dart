@@ -1,4 +1,3 @@
-
 import 'flutter_ui_base_platform_interface.dart';
 import 'package:get_it/get_it.dart';
 import 'package:my_localizations/library.dart';
@@ -15,8 +14,10 @@ class FlutterUiBase {
   /// It registers [AppLocalizations] and [AppStyle] with GetIt for global access.
   static Future<void> initialize({
     required AppStyle style,
+    required AppLocalizations localizations,
   }) async {
     GetIt.I.registerSingleton<AppStyle>(style);
+    GetIt.I.registerSingleton<AppLocalizations>(localizations);
   }
 
   Future<String?> getPlatformVersion() {

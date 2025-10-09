@@ -225,9 +225,11 @@ packages:
   flutter_core:
     dependency: transitive
     description:
-      path: "C:\\Users\\vraj0\\AndroidStudioProjects\\flutter_core"
-      relative: false
-    source: path
+      path: "."
+      ref: HEAD
+      resolved-ref: "41fd9d727813051febe40b8dc6a2de92bfba0a74"
+      url: "https://github.com/vraj0703/flutter_core.git"
+    source: git
     version: "0.0.1"
   flutter_displaymode:
     dependency: transitive
@@ -661,16 +663,20 @@ packages:
   my_localizations:
     dependency: transitive
     description:
-      path: "C:\\Users\\vraj0\\AndroidStudioProjects\\my_localizations"
-      relative: false
-    source: path
+      path: "."
+      ref: HEAD
+      resolved-ref: "63600b06e4287de4552ac3d73c0aa636b808b366"
+      url: "https://github.com/vraj0703/my_localizations.git"
+    source: git
     version: "0.0.1"
   my_theme_style:
     dependency: transitive
     description:
-      path: "C:\\Users\\vraj0\\AndroidStudioProjects\\my_theme_style"
-      relative: false
-    source: path
+      path: "."
+      ref: HEAD
+      resolved-ref: "1003e01833664a2520d98c19949a9dfb7df02db3"
+      url: "https://github.com/vraj0703/my_theme_style.git"
+    source: git
     version: "0.0.1"
   nested:
     dependency: transitive

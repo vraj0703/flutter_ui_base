@@ -1,5 +1,5 @@
-import 'package:flutter_core/domain/enums/list_bottom_sheet_icon_position.dart';
-import 'package:flutter_core/domain/models/list_bottom_sheet_item.dart';
+import 'package:flutter_core/core/enums/icon_position.dart';
+import 'package:flutter_core/core/models/bottom_sheet_item.dart';
 import 'package:flutter_ui_base/common_libs.dart';
 
 class ListBottomSheetWidget extends StatelessWidget {
@@ -75,6 +75,9 @@ class ListBottomSheetWidget extends StatelessWidget {
           break;
         case IconPosition.right:
           content.addAll([const Spacer(), iconInfo.icon]);
+          break;
+        case IconPosition.top:
+        case IconPosition.bottom:
           break;
       }
     }

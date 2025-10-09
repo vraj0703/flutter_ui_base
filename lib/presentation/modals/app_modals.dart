@@ -4,7 +4,7 @@ import 'package:flutter_ui_base/presentation/widgets/themed_text.dart';
 Future<bool?> showModal(BuildContext context, {required Widget child}) async {
   return await showModalBottomSheet(
         context: context,
-        backgroundColor: $styles.colors.greyStrong,
+        backgroundColor: $styles.colors.greyDark,
         builder: (_) => child,
       ) ??
       false;
@@ -42,10 +42,11 @@ class OkModal extends StatelessWidget {
       msg: msg,
       buttons: [
         AppBtn.from(
-            text: $strings.ok,
-            expand: true,
-            isSecondary: true,
-            onPressed: () => Navigator.of(context).pop(true)),
+          text: $strings.ok,
+          expand: true,
+          isSecondary: true,
+          onPressed: () => Navigator.of(context).pop(true),
+        ),
       ],
       child: child,
     );
@@ -66,15 +67,17 @@ class OkCancelModal extends StatelessWidget {
       msg: msg,
       buttons: [
         AppBtn.from(
-            text: $strings.ok,
-            expand: true,
-            isSecondary: true,
-            onPressed: () => Navigator.of(context).pop(true)),
+          text: $strings.ok,
+          expand: true,
+          isSecondary: true,
+          onPressed: () => Navigator.of(context).pop(true),
+        ),
         Gap($styles.insets.xs),
         AppBtn.from(
-            text: $strings.cancel,
-            expand: true,
-            onPressed: () => Navigator.of(context).pop(false)),
+          text: $strings.cancel,
+          expand: true,
+          onPressed: () => Navigator.of(context).pop(false),
+        ),
       ],
       child: child,
     );
@@ -88,8 +91,12 @@ class _BaseContentModal extends StatelessWidget {
   final Widget? child;
   final List<Widget> buttons;
 
-  const _BaseContentModal(
-      {this.title, this.msg, required this.buttons, this.child});
+  const _BaseContentModal({
+    this.title,
+    this.msg,
+    required this.buttons,
+    this.child,
+  });
 
   @override
   Widget build(BuildContext context) {
@@ -104,11 +111,12 @@ class _BaseContentModal extends StatelessWidget {
                 mainAxisSize: MainAxisSize.min,
                 separatorBuilder: () => Gap($styles.insets.md),
                 children: [
-                  if (title != null) Text(title!, style: $styles.text.h2),
+                  if (title != null)
+                    Text(title!, style: $styles.text.headlineMedium),
                   if (child != null) child!,
-                  if (msg != null) Text(msg!, style: $styles.text.body),
+                  if (msg != null) Text(msg!, style: $styles.text.bodyMedium),
                   Gap($styles.insets.md),
-                  Column(children: buttons.map((e) => e).toList())
+                  Column(children: buttons.map((e) => e).toList()),
                 ],
               ),
             ),

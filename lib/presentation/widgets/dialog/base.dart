@@ -2,7 +2,7 @@ import 'dart:io';
 
 import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
-import 'package:flutter_core/domain/models/dialog.dart';
+import 'package:flutter_core/core/models/dialog.dart';
 
 class BaseDialog extends StatelessWidget {
   final DialogEssentials data;

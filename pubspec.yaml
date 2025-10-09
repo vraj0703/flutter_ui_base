@@ -20,12 +20,15 @@ dependencies:
   provider: ^6.1.5+1
   rnd: ^0.2.0
   sized_context: ^1.0.0+4
-  my_localizations:
-    path: C:\Users\vraj0\AndroidStudioProjects\my_localizations
   flutter_core:
-    path: C:\Users\vraj0\AndroidStudioProjects\flutter_core
+    git:
+      url: https://github.com/vraj0703/flutter_core.git
   my_theme_style:
-    path: C:\Users\vraj0\AndroidStudioProjects\my_theme_style
+    git:
+      url: https://github.com/vraj0703/my_theme_style.git
+  my_localizations:
+    git:
+      url: https://github.com/vraj0703/my_localizations.git
   flutter_bloc: ^9.1.1
   desktop_window: ^0.4.2
   flutter_displaymode: ^0.6.0
