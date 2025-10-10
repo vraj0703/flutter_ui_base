@@ -24,6 +24,6 @@ export 'package:flutter_ui_base/presentation/controls/app_image.dart';
 export 'package:flutter_ui_base/presentation/controls/buttons.dart';
 export 'package:flutter_ui_base/presentation/controls/circle_buttons.dart';
 export 'package:flutter_ui_base/presentation/controls/scroll_decorator.dart';
-export 'package:flutter_ui_base/presentation/widgets/app_shortcuts.dart';
+export 'package:flutter_ui_base/domain/logic/app_shortcuts.dart';
 export 'package:flutter_ui_base/presentation/widgets/app_scroll_behavior.dart';
 export 'package:flutter_core/core/logic/throttler.dart';

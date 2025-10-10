@@ -3,7 +3,7 @@ import 'package:flutter/material.dart';
 import 'package:flutter/widgets.dart';
 import 'package:shimmer/shimmer.dart';
 
-import 'banner_header_model.dart';
+import '../../modals/banner_header_model.dart';
 
 class BannerHeaderWidget extends StatelessWidget {
   final BannerHeaderModel model;
