@@ -79,7 +79,7 @@ class ScrollDecorator extends StatefulWidget {
           decoration: BoxDecoration(
             gradient: LinearGradient(
               colors: [
-                color.withOpacity(ratio * color.opacity),
+                color.withValues(alpha: ratio * color.opacity),
                 Colors.transparent
               ],
               stops: [0, ratio],

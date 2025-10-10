@@ -124,8 +124,8 @@ class BannerHeaderWidget extends StatelessWidget {
                     padding: const EdgeInsets.all(8.0),
                     child: Shimmer.fromColors(
                       baseColor: model.iconBackgroundColor,
-                      highlightColor: model.primaryBackgroundColor.withOpacity(
-                        0.5,
+                      highlightColor: model.primaryBackgroundColor.withValues(
+                        alpha: 0.5,
                       ),
                       child: Container(
                         width: double.infinity,
@@ -138,8 +138,8 @@ class BannerHeaderWidget extends StatelessWidget {
                     padding: const EdgeInsets.all(8.0),
                     child: Shimmer.fromColors(
                       baseColor: model.iconBackgroundColor,
-                      highlightColor: model.primaryBackgroundColor.withOpacity(
-                        0.5,
+                      highlightColor: model.primaryBackgroundColor.withValues(
+                        alpha: 0.5,
                       ),
                       child: Container(
                         width: MediaQuery.of(context).size.width / 2,
@@ -152,8 +152,8 @@ class BannerHeaderWidget extends StatelessWidget {
                     padding: const EdgeInsets.all(8.0),
                     child: Shimmer.fromColors(
                       baseColor: model.iconBackgroundColor,
-                      highlightColor: model.primaryBackgroundColor.withOpacity(
-                        0.5,
+                      highlightColor: model.primaryBackgroundColor.withValues(
+                        alpha: 0.5,
                       ),
                       child: Container(
                         width: MediaQuery.of(context).size.width / 3,
