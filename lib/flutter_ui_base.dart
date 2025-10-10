@@ -1,7 +1,13 @@
+import 'package:injectable/injectable.dart';
+
 import 'flutter_ui_base_platform_interface.dart';
 import 'package:get_it/get_it.dart';
 import 'package:my_localizations/library.dart';
 import 'package:my_theme_style/styles/styles.dart' show AppStyle;
+
+@InjectableInit()
+Future<void> configureDependencies(String flavor) async =>
+    GetIt.instance;
 
 /// A Flutter plugin that initializes with AppLocalizations and AppStyle.
 ///
