@@ -1,7 +1,6 @@
 import 'package:flutter_ui_base/common_libs.dart';
-import 'package:get_it_mixin/get_it_mixin.dart';
 
-class LocaleSwitcher extends StatelessWidget with GetItMixin {
+class LocaleSwitcher extends StatelessWidget {
   LocaleSwitcher({super.key});
 
   @override
@@ -13,7 +12,7 @@ class LocaleSwitcher extends StatelessWidget with GetItMixin {
     }
 
     return AppBtn.from(
-        text: $strings.localeSwapButton,
+        text: $strings.appName,
         onPressed: handleSwapLocale,
         padding: EdgeInsets.all($styles.insets.sm));
   }
