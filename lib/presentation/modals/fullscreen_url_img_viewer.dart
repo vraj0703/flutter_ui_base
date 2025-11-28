@@ -2,7 +2,6 @@ import 'dart:async';
 
 import 'package:flutter_ui_base/common_libs.dart';
 import 'package:flutter_ui_base/presentation/controls/app_header.dart';
-import 'package:flutter_ui_base/presentation/widgets/app_icons.dart';
 import 'package:flutter_ui_base/presentation/widgets/fullscreen_keyboard_listener.dart';
 
 class FullscreenUrlImgViewer extends StatefulWidget {
@@ -55,8 +54,11 @@ class _FullscreenUrlImgViewerState extends State<FullscreenUrlImgViewer> {
 
   void _animateToPage(int page) {
     if (page >= 0 || page < widget.urls.length) {
-      _controller.animateToPage(page,
-          duration: $styles.times.fast, curve: Curves.easeOut);
+      _controller.animateToPage(
+        page,
+        duration: $durations.short2,
+        curve: Curves.easeOut,
+      );
     }
   }
 
@@ -64,7 +66,7 @@ class _FullscreenUrlImgViewerState extends State<FullscreenUrlImgViewer> {
   Widget build(BuildContext context) {
     Widget content = AnimatedBuilder(
       animation: _isZoomed,
-      builder: (_, __) {
+      builder: (_, _) {
         final bool enableSwipe = !_isZoomed.value && widget.urls.length > 1;
         return PageView.builder(
           physics: enableSwipe
@@ -100,7 +102,7 @@ class _FullscreenUrlImgViewerState extends State<FullscreenUrlImgViewer> {
                   padding: EdgeInsets.only(bottom: $styles.insets.md),
                   child: ValueListenableBuilder(
                     valueListenable: _currentPage,
-                    builder: (_, int page, __) {
+                    builder: (_, int page, _) {
                       return Row(
                         mainAxisSize: MainAxisSize.min,
                         children: [
@@ -119,14 +121,14 @@ class _FullscreenUrlImgViewerState extends State<FullscreenUrlImgViewer> {
                                 ? null
                                 : () => _animateToPage(page + 1),
                             semanticLabel: $strings.semanticsNext(''),
-                          )
+                          ),
                         ],
                       );
                     },
                   ),
                 ),
-              )
-            }
+              ),
+            },
           ],
         ),
       ),
@@ -169,9 +171,7 @@ class _ViewerState extends State<_Viewer> with SingleTickerProviderStateMixin {
         child: Hero(
           tag: widget.url,
           child: AppImage(
-            image: NetworkImage(
-              widget.url,
-            ),
+            image: NetworkImage(widget.url),
             fit: BoxFit.contain,
             scale: FullscreenUrlImgViewer.imageScale,
             progress: true,

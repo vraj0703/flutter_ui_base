@@ -1,5 +1,4 @@
 import 'package:flutter_ui_base/common_libs.dart';
-import 'package:flutter_ui_base/presentation/widgets/app_icons.dart';
 import 'package:flutter_ui_base/presentation/widgets/fullscreen_keyboard_listener.dart';
 
 class CircleBtn extends StatelessWidget {
@@ -67,8 +66,8 @@ class CircleIconBtn extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    Color defaultColor = $styles.colors.greyDark;
-    Color iconColor = color ?? $styles.colors.offWhite;
+    Color defaultColor = $colors.greyDark;
+    Color iconColor = color ?? $colors.offWhite;
     return CircleBtn(
       onPressed: onPressed,
       border: border,
@@ -165,7 +164,7 @@ class _SafeAreaWithPadding extends StatelessWidget {
     return SafeArea(
       bottom: false,
       child: Padding(
-        padding: EdgeInsets.all($styles.insets.sm),
+        padding: EdgeInsets.all($insets.sm),
         child: child,
       ),
     );

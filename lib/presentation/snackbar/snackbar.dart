@@ -1,5 +1,5 @@
 import 'package:flutter/material.dart';
-import 'package:flutter_ui_base/flutter_ui_base.dart';
+import 'package:flutter_ui_base/internal_exports.dart';
 
 class AppSnackBar {
   final Color? color;
@@ -16,7 +16,7 @@ class AppSnackBar {
     this.behavior = SnackBarBehavior.floating,
   });
 
-  static show(
+  static void show(
     BuildContext context, {
     String? message,
     TextStyle? style,
@@ -31,7 +31,7 @@ class AppSnackBar {
       ..showSnackBar(
         SnackBar(
           key: const Key('app_snackbar'),
-          backgroundColor: (color != null) ? color : $styles.colors.offWhite,
+          backgroundColor: (color != null) ? color : $colors.offWhite,
           shape: RoundedRectangleBorder(
             borderRadius: BorderRadius.circular(10),
           ),

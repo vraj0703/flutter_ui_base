@@ -1,5 +1,5 @@
 import 'package:flutter_ui_base/common_libs.dart';
-import 'package:flutter_ui_base/presentation/widgets/app_icons.dart';
+
 
 class AppHeader extends StatelessWidget {
   const AppHeader(
@@ -54,8 +54,8 @@ class AppHeader extends StatelessWidget {
                             subtitle!.toUpperCase(),
                             textHeightBehavior: TextHeightBehavior(
                                 applyHeightToFirstAscent: false),
-                            style: $styles.text.headlineLarge
-                                .copyWith(color: $styles.colors.secondaryLight),
+                            style: $textStyle.headlineLarge
+                                .copyWith(color: $colors.secondaryLight),
                           ),
                       ],
                     ),
@@ -65,7 +65,7 @@ class AppHeader extends StatelessWidget {
               Positioned.fill(
                 child: Center(
                   child: Row(children: [
-                    Gap($styles.insets.sm),
+                    Gap($insets.sm),
                     if (showBackBtn)
                       BackBtn(
                         onPressed: onBack,
@@ -74,7 +74,7 @@ class AppHeader extends StatelessWidget {
                       ),
                     Spacer(),
                     if (trailing != null) trailing!.call(context),
-                    Gap($styles.insets.sm),
+                    Gap($insets.sm),
                     //if (showBackBtn) Container(width: $styles.insets.lg * 2, alignment: Alignment.centerLeft, child: child),
                   ]),
                 ),

@@ -79,7 +79,7 @@ class ScrollDecorator extends StatefulWidget {
           decoration: BoxDecoration(
             gradient: LinearGradient(
               colors: [
-                color.withValues(alpha: ratio * color.opacity),
+                color.withValues(alpha: ratio * color.a),
                 Colors.transparent
               ],
               stops: [0, ratio],
@@ -137,7 +137,7 @@ class _ScrollDecoratorState extends State<ScrollDecorator> {
     content = widget.builder(currentController);
     return AnimatedBuilder(
         animation: currentController,
-        builder: (_, __) {
+        builder: (_, _) {
           return Stack(
             children: [
               if (widget.bgBuilder != null) ...[

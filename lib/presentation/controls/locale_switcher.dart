@@ -1,7 +1,7 @@
 import 'package:flutter_ui_base/common_libs.dart';
 
 class LocaleSwitcher extends StatelessWidget {
-  LocaleSwitcher({super.key});
+  const LocaleSwitcher({super.key});
 
   @override
   Widget build(BuildContext context) {
@@ -14,6 +14,6 @@ class LocaleSwitcher extends StatelessWidget {
     return AppBtn.from(
         text: $strings.appName,
         onPressed: handleSwapLocale,
-        padding: EdgeInsets.all($styles.insets.sm));
+        padding: EdgeInsets.all($insets.sm));
   }
 }

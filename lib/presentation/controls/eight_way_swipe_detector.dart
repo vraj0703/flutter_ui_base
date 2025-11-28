@@ -15,10 +15,10 @@ class EightWaySwipeDetector extends StatefulWidget {
   final void Function(Offset dir)? onSwipe;
 
   @override
-  State<EightWaySwipeDetector> createState() => _EightWaySwipeDetectorState();
+  State<EightWaySwipeDetector> createState() => EightWaySwipeDetectorState();
 }
 
-class _EightWaySwipeDetectorState extends State<EightWaySwipeDetector> {
+class EightWaySwipeDetectorState extends State<EightWaySwipeDetector> {
   Offset _startPos = Offset.zero;
   Offset _endPos = Offset.zero;
   bool _isSwiping = false;

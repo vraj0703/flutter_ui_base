@@ -31,7 +31,7 @@ class DarkText extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) => DefaultTextColor(
-        color: $styles.colors.black,
+        color: $colors.black,
         child: child,
       );
 }

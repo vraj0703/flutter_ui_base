@@ -18,7 +18,7 @@ class ListOverscrollGradient extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    final c = color ?? $styles.colors.black;
+    final c = color ?? $colors.black;
     return VtGradient(
       [
         c.withValues(alpha: bottomUp ? 0 : 1),

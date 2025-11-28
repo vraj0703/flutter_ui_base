@@ -21,29 +21,29 @@ class SimpleCheckbox extends StatelessWidget {
       children: [
         Container(
           decoration: BoxDecoration(
-            borderRadius: BorderRadius.all(Radius.circular($styles.corners.sm)),
+            borderRadius: BorderRadius.all(Radius.circular($corners.sm)),
           ),
           child: Checkbox(
             shape: RoundedRectangleBorder(
               borderRadius: BorderRadius.all(
-                Radius.circular($styles.corners.sm),
+                Radius.circular($corners.sm),
               ),
             ),
             value: active,
             visualDensity: VisualDensity(horizontal: 0.5, vertical: 0.5),
-            checkColor: $styles.colors.black.withValues(alpha: 0.75),
-            activeColor: $styles.colors.white.withValues(alpha: 0.75),
+            checkColor: $colors.black.withValues(alpha: 0.75),
+            activeColor: $colors.white.withValues(alpha: 0.75),
             onChanged: (bool? active) {
               AppHaptics.mediumImpact();
               onToggled.call(active);
             },
           ),
         ),
-        Gap($styles.insets.xs),
+        Gap($insets.xs),
         Text(
           label,
-          style: $styles.text.bodyLarge.copyWith(
-            color: $styles.colors.offWhite,
+          style: $textStyle.bodyLarge.copyWith(
+            color: $colors.offWhite,
           ),
         ),
       ],

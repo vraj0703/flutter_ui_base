@@ -12,7 +12,7 @@ class DiagonalTextPageIndicator extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     final textStyle =
-        $styles.text.titleFont.copyWith(fontSize: _fontSize, height: 1);
+        $textStyle.titleFont.copyWith(fontSize: _fontSize, height: 1);
     final size = _fontSize * 1.5;
     return StaticTextScale(
       child: Padding(

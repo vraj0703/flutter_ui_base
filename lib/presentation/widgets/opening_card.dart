@@ -26,7 +26,7 @@ class _OpeningCardState extends State<OpeningCard> {
   @override
   Widget build(BuildContext context) {
     return TweenAnimationBuilder<Size>(
-      duration: $styles.times.fast,
+      duration: $durations.short2,
       curve: Curves.easeOut,
       builder: (_, value, child) => Stack(
         children: [
@@ -43,7 +43,7 @@ class _OpeningCardState extends State<OpeningCard> {
       ),
       tween: Tween(begin: _size, end: _size),
       child: AnimatedSwitcher(
-        duration: $styles.times.fast,
+        duration: $durations.short2,
         child: ClipRect(
           key: ValueKey(widget.isOpen),
           child: OverflowBox(

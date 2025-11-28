@@ -4,7 +4,7 @@ import 'package:flutter_ui_base/presentation/widgets/themed_text.dart';
 Future<bool?> showModal(BuildContext context, {required Widget child}) async {
   return await showModalBottomSheet(
         context: context,
-        backgroundColor: $styles.colors.greyDark,
+        backgroundColor: $colors.greyDark,
         builder: (_) => child,
       ) ??
       false;
@@ -72,7 +72,7 @@ class OkCancelModal extends StatelessWidget {
           isSecondary: true,
           onPressed: () => Navigator.of(context).pop(true),
         ),
-        Gap($styles.insets.xs),
+        Gap($insets.xs),
         AppBtn.from(
           text: $strings.cancel,
           expand: true,
@@ -103,19 +103,19 @@ class _BaseContentModal extends StatelessWidget {
     return IntrinsicHeight(
       child: Center(
         child: SizedBox(
-          width: $styles.sizes.maxContentWidth3,
+          width: $sizes.maxContentWidth3,
           child: Padding(
-            padding: EdgeInsets.all($styles.insets.lg),
+            padding: EdgeInsets.all($insets.lg),
             child: LightText(
               child: SeparatedColumn(
                 mainAxisSize: MainAxisSize.min,
-                separatorBuilder: () => Gap($styles.insets.md),
+                separatorBuilder: () => Gap($insets.md),
                 children: [
                   if (title != null)
-                    Text(title!, style: $styles.text.headlineMedium),
+                    Text(title!, style: $textStyle.headlineMedium),
                   if (child != null) child!,
-                  if (msg != null) Text(msg!, style: $styles.text.bodyMedium),
-                  Gap($styles.insets.md),
+                  if (msg != null) Text(msg!, style: $textStyle.bodyMedium),
+                  Gap($insets.md),
                   Column(children: buttons.map((e) => e).toList()),
                 ],
               ),

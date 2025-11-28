@@ -12,11 +12,11 @@ class SlideInTransitionWidget extends StatefulWidget {
       {super.key, required this.widget, required this.duration});
 
   @override
-  _SlideInTransitionWidgetState createState() =>
-      _SlideInTransitionWidgetState();
+  SlideInTransitionWidgetState createState() =>
+      SlideInTransitionWidgetState();
 }
 
-class _SlideInTransitionWidgetState extends State<SlideInTransitionWidget>
+class SlideInTransitionWidgetState extends State<SlideInTransitionWidget>
     with SingleTickerProviderStateMixin {
   late final AnimationController _controller;
   late final Animation<Offset> _animation;

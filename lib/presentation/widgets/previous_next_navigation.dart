@@ -1,7 +1,5 @@
 import 'package:flutter/gestures.dart';
 import 'package:flutter_ui_base/common_libs.dart';
-
-import 'app_icons.dart';
 import 'fullscreen_keyboard_listener.dart';
 
 class PreviousNextNavigation extends StatefulWidget {
@@ -71,7 +69,7 @@ class _PreviousNextNavigationState extends State<PreviousNextNavigation> {
               child: SizedBox(
                 width: widget.maxWidth ?? double.infinity,
                 child: Padding(
-                  padding: EdgeInsets.symmetric(horizontal: $styles.insets.sm),
+                  padding: EdgeInsets.symmetric(horizontal: $insets.sm),
                   child: Row(
                     children: [
                       CircleIconBtn(

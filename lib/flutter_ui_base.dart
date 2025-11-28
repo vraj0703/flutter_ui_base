@@ -30,8 +30,3 @@ class FlutterUiBase {
 
   static AppStyle get appStyle => _appStyle;
 }
-
-/// Global helpers for readability
-AppLocalizations get $strings => FlutterUiBase.localizations;
-
-AppStyle get $styles => FlutterUiBase.appStyle;

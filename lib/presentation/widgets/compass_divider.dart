@@ -25,7 +25,7 @@ class CompassDivider extends StatelessWidget {
         child: Divider(
           height: 1,
           thickness: .5,
-          color: linesColor ?? $styles.colors.secondaryLight,
+          color: linesColor ?? $colors.secondaryLight,
         ),
         builder: (_, value, child) {
           return Transform.scale(
@@ -40,7 +40,7 @@ class CompassDivider extends StatelessWidget {
     return Row(
       children: [
         Expanded(child: buildHzAnimatedDivider()),
-        Gap($styles.insets.sm),
+        Gap($insets.sm),
         TweenAnimationBuilder<double>(
           duration: duration,
           tween: Tween(begin: 0, end: isExpanded ? .5 : 0),
@@ -49,7 +49,7 @@ class CompassDivider extends StatelessWidget {
               Transform.rotate(angle: value * pi * 2, child: child),
           child: SizedBox(height: 32, width: 32),
         ),
-        Gap($styles.insets.sm),
+        Gap($insets.sm),
         Expanded(child: buildHzAnimatedDivider(alignLeft: true)),
       ],
     );

@@ -27,7 +27,7 @@ class AppRichText extends StatelessWidget {
   }
 
   TextSpan _parseText(String input) {
-    final RegExp exp = RegExp(r'<(\w+)>(.*?)<\/\1>|([^<]+)');
+    final RegExp exp = RegExp(r'<(\w+)>(.*?)</\1>|([^<]+)');
     final List<InlineSpan> spans = [];
 
     for (final Match match in exp.allMatches(input)) {

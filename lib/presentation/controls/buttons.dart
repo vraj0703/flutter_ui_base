@@ -1,5 +1,4 @@
 import 'package:flutter_ui_base/common_libs.dart';
-import 'package:flutter_ui_base/presentation/widgets/app_icons.dart';
 import 'package:flutter_ui_base/presentation/widgets/ignore_pointer.dart';
 
 /// Shared methods across button types
@@ -10,7 +9,7 @@ Widget _buildIcon(
   required double? size,
 }) => AppIcon(
   icon,
-  color: isSecondary ? $styles.colors.black : $styles.colors.offWhite,
+  color: isSecondary ? $colors.black : $colors.offWhite,
   size: size ?? 18,
 );
 
@@ -76,7 +75,7 @@ class AppBtn extends StatelessWidget {
         return Row(
           mainAxisAlignment: MainAxisAlignment.center,
           mainAxisSize: MainAxisSize.min,
-          children: [txt, Gap($styles.insets.xs), icn],
+          children: [txt, Gap($insets.xs), icn],
         );
       } else {
         return (txt ?? icn)!;
@@ -129,9 +128,9 @@ class AppBtn extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     Color defaultColor = isSecondary
-        ? $styles.colors.white
-        : $styles.colors.greyDark;
-    Color textColor = isSecondary ? $styles.colors.black : $styles.colors.white;
+        ? $colors.white
+        : $colors.greyDark;
+    Color textColor = isSecondary ? $colors.black : $styles.colors.white;
     BorderSide side = border ?? BorderSide.none;
 
     Widget content = _builder?.call(context) ?? child ?? SizedBox.shrink();
@@ -141,7 +140,7 @@ class AppBtn extends StatelessWidget {
         ? CircleBorder(side: side)
         : RoundedRectangleBorder(
             side: side,
-            borderRadius: BorderRadius.circular($styles.corners.md),
+            borderRadius: BorderRadius.circular($corners.md),
           );
 
     ButtonStyle style = ButtonStyle(
@@ -155,7 +154,7 @@ class AppBtn extends StatelessWidget {
       // disable default press effect
       shape: ButtonStyleButton.allOrNull<OutlinedBorder>(shape),
       padding: ButtonStyleButton.allOrNull<EdgeInsetsGeometry>(
-        padding ?? EdgeInsets.all($styles.insets.md),
+        padding ?? EdgeInsets.all($insets.md),
       ),
 
       enableFeedback: enableFeedback,
@@ -185,9 +184,9 @@ class AppBtn extends StatelessWidget {
               child: IgnorePointerAndSemantics(
                 child: Container(
                   decoration: BoxDecoration(
-                    borderRadius: BorderRadius.circular($styles.corners.md),
+                    borderRadius: BorderRadius.circular($corners.md),
                     border: Border.all(
-                      color: $styles.colors.secondaryLight,
+                      color: $colors.secondaryLight,
                       width: 3,
                     ),
                   ),

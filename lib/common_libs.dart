@@ -15,10 +15,10 @@ export 'package:rnd/rnd.dart';
 export 'package:sized_context/sized_context.dart';
 
 export 'package:flutter_core/library.dart';
-export 'package:my_localizations/library.dart';
-export 'package:my_theme_style/library.dart';
+export 'package:flutter_ui_base/internal_exports.dart';
+export 'package:my_theme_style/styles/icons.dart';
+export 'package:my_theme_style/styles/app_icons.dart';
 
-export 'package:flutter_ui_base/flutter_ui_base.dart';
 export 'package:go_router/go_router.dart';
 export 'package:flutter_ui_base/presentation/controls/app_image.dart';
 export 'package:flutter_ui_base/presentation/controls/buttons.dart';

@@ -32,7 +32,7 @@ class ListBottomSheetWidget extends StatelessWidget {
                   height: 4,
                   width: 40,
                   decoration: BoxDecoration(
-                    color: $styles.colors.offWhite,
+                    color: $colors.offWhite,
                     borderRadius: BorderRadius.circular(20),
                   ),
                 ),
