@@ -47,7 +47,11 @@ class CompassDivider extends StatelessWidget {
           curve: Curves.easeOutBack,
           builder: (_, value, child) =>
               Transform.rotate(angle: value * pi * 2, child: child),
-          child: SizedBox(height: 32, width: 32),
+          child: Icon(
+            Icons.explore,
+            size: 32,
+            color: compassColor ?? $colors.secondaryLight,
+          ),
         ),
         Gap($insets.sm),
         Expanded(child: buildHzAnimatedDivider(alignLeft: true)),

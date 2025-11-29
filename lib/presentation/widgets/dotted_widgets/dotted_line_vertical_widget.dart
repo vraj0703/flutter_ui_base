@@ -55,7 +55,10 @@ class DottedLineVerticalPainter extends CustomPainter {
   }
 
   @override
-  bool shouldRepaint(CustomPainter oldDelegate) {
-    return false;
+  bool shouldRepaint(covariant DottedLineVerticalPainter oldDelegate) {
+    return oldDelegate.color != color ||
+        oldDelegate.dashWidth != dashWidth ||
+        oldDelegate.dashHeight != dashHeight ||
+        oldDelegate.dashSpacing != dashSpacing;
   }
 }

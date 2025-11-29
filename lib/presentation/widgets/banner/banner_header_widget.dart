@@ -1,9 +1,9 @@
 import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter/widgets.dart';
+import 'package:flutter_ui_base/presentation/modals/banner_header_model.dart';
 import 'package:shimmer/shimmer.dart';
 
-import '../../modals/banner_header_model.dart';
 
 class BannerHeaderWidget extends StatelessWidget {
   final BannerHeaderModel model;

@@ -17,8 +17,7 @@ class GradientIcon extends StatelessWidget {
     return ShaderMask(
       child: Icon(icon, size: size, color: Colors.white),
       shaderCallback: (Rect bounds) {
-        final Rect rect = Rect.fromLTRB(0, 0, size, size);
-        return gradient.createShader(rect);
+        return gradient.createShader(bounds);
       },
     );
   }

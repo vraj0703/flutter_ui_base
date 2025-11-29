@@ -49,15 +49,17 @@ class DashedHorizontalLinePainter extends CustomPainter {
       ..strokeWidth = dashHeight;
 
     while (startX < size.width) {
-      canvas.drawLine(
-        Offset(startX, 0),
-        Offset(startX + dashWidth, 0),
-        paint,
-      );
+      canvas.drawLine(Offset(startX, 0), Offset(startX + dashWidth, 0), paint);
       startX += dashWidth + dashSpacing;
     }
   }
 
   @override
-  bool shouldRepaint(CustomPainter oldDelegate) => false;
+  @override
+  bool shouldRepaint(covariant DashedHorizontalLinePainter oldDelegate) {
+    return oldDelegate.color != color ||
+        oldDelegate.dashWidth != dashWidth ||
+        oldDelegate.dashHeight != dashHeight ||
+        oldDelegate.dashSpacing != dashSpacing;
+  }
 }

@@ -4,7 +4,7 @@ import 'package:visibility_detector/visibility_detector.dart';
 class AnimatedGradientArc extends StatefulWidget {
   final Duration duration;
   final CustomPainter? Function(BuildContext context, double animationValue)
-      builder;
+  builder;
 
   const AnimatedGradientArc({
     super.key,
@@ -21,18 +21,13 @@ class AnimatedGradientArcState extends State<AnimatedGradientArc>
   late AnimationController _controller;
   late Animation<double> _animation;
   bool _isVisible = false;
+  final Key _visibilityKey = UniqueKey();
 
   @override
   void initState() {
     super.initState();
     _controller = AnimationController(vsync: this, duration: widget.duration);
-    _animation = Tween<double>(
-      begin: 0,
-      end: 1,
-    ).animate(_controller)
-      ..addListener(() {
-        setState(() {});
-      });
+    _animation = Tween<double>(begin: 0, end: 1).animate(_controller);
   }
 
   @override
@@ -48,7 +43,7 @@ class AnimatedGradientArcState extends State<AnimatedGradientArc>
   @override
   Widget build(BuildContext context) {
     return VisibilityDetector(
-      key: UniqueKey(),
+      key: _visibilityKey,
       onVisibilityChanged: (info) {
         if (info.visibleFraction == 1.0 && !_isVisible) {
           _isVisible = true;

@@ -2,38 +2,48 @@ import 'package:flutter_ui_base/common_libs.dart';
 
 import 'fullscreen_keyboard_listener.dart';
 
-class FullscreenKeyboardListScroller extends StatelessWidget {
-  FullscreenKeyboardListScroller(
-      {super.key, required this.child, required this.scrollController});
-
-  static const int _scrollAmountOnPress = 75;
-  static const int _scrollAmountOnHold = 30;
-  static final Duration _keyPressAnimationDuration = $durations.short2 * .5;
+class FullscreenKeyboardListScroller extends StatefulWidget {
+  const FullscreenKeyboardListScroller({
+    super.key,
+    required this.child,
+    required this.scrollController,
+  });
 
   final Widget child;
   final ScrollController scrollController;
+
+  @override
+  State<FullscreenKeyboardListScroller> createState() =>
+      _FullscreenKeyboardListScrollerState();
+}
+
+class _FullscreenKeyboardListScrollerState
+    extends State<FullscreenKeyboardListScroller> {
+  static const int _scrollAmountOnPress = 75;
+  static const int _scrollAmountOnHold = 30;
+  static final Duration _keyPressAnimationDuration = $durations.short2 * .5;
   final Throttler _throttler = Throttler(32.milliseconds);
 
-  double clampOffset(px) =>
-      px.clamp(0, scrollController.position.maxScrollExtent).toDouble();
+  double clampOffset(double px) =>
+      px.clamp(0, widget.scrollController.position.maxScrollExtent).toDouble();
 
   void _handleKeyDown(int px) {
-    scrollController.animateTo(
-      clampOffset(scrollController.offset + px),
+    widget.scrollController.animateTo(
+      clampOffset(widget.scrollController.offset + px),
       duration: _keyPressAnimationDuration,
       curve: Curves.easeOut,
     );
   }
 
   void _handleKeyRepeat(int px) {
-    final offset = clampOffset(scrollController.offset + px);
-    _throttler.call(() => scrollController.jumpTo(offset));
+    final offset = clampOffset(widget.scrollController.offset + px);
+    _throttler.call(() => widget.scrollController.jumpTo(offset));
   }
 
   @override
   Widget build(BuildContext context) {
     return FullscreenKeyboardListener(
-      child: child,
+      child: widget.child,
       onKeyRepeat: (event) {
         if (event.logicalKey == LogicalKeyboardKey.arrowUp) {
           _handleKeyRepeat(-_scrollAmountOnHold);

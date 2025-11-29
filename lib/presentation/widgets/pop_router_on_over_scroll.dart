@@ -1,7 +1,11 @@
 import 'package:flutter_ui_base/common_libs.dart';
 
 class PopRouterOnOverScroll extends StatefulWidget {
-  const PopRouterOnOverScroll({super.key, required this.child, required this.controller});
+  const PopRouterOnOverScroll({
+    super.key,
+    required this.child,
+    required this.controller,
+  });
   final ScrollController controller;
   final Widget child;
 
@@ -22,9 +26,16 @@ class _PopRouterOnOverScrollState extends State<PopRouterOnOverScroll> {
   @override
   void didUpdateWidget(covariant PopRouterOnOverScroll oldWidget) {
     if (widget.controller != oldWidget.controller) {
+      oldWidget.controller.removeListener(_handleScrollChanged);
       widget.controller.addListener(_handleScrollChanged);
     }
     super.didUpdateWidget(oldWidget);
+  }
+
+  @override
+  void dispose() {
+    widget.controller.removeListener(_handleScrollChanged);
+    super.dispose();
   }
 
   bool _checkPointerIsDown(d) => _isPointerDown = d.dragDetails != null;

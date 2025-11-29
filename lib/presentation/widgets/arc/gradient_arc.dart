@@ -1,5 +1,4 @@
 import 'package:flutter/material.dart';
-
 import 'arc_animation.dart';
 
 class GradientArc extends StatelessWidget {
@@ -63,8 +62,9 @@ class _GradientArcPainter extends CustomPainter {
   @override
   void paint(Canvas canvas, Size size) {
     final rect = Rect.fromCircle(
-        center: Offset(size.width / 2, size.height / 2),
-        radius: size.width / 2);
+      center: Offset(size.width / 2, size.height / 2),
+      radius: size.width / 2,
+    );
     final gradient = LinearGradient(
       begin: Alignment.centerLeft,
       end: Alignment.centerRight,
@@ -82,7 +82,11 @@ class _GradientArcPainter extends CustomPainter {
   }
 
   @override
-  bool shouldRepaint(covariant CustomPainter oldDelegate) {
-    return false;
+  bool shouldRepaint(covariant _GradientArcPainter oldDelegate) {
+    return oldDelegate.sweepAngle != sweepAngle ||
+        oldDelegate.startAngle != startAngle ||
+        oldDelegate.strokeWidth != strokeWidth ||
+        oldDelegate.colors != colors ||
+        oldDelegate.colorStops != colorStops;
   }
 }

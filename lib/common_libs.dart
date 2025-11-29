@@ -16,7 +16,6 @@ export 'package:sized_context/sized_context.dart';
 
 export 'package:flutter_core/library.dart';
 export 'package:flutter_ui_base/internal_exports.dart';
-export 'package:my_theme_style/styles/icons.dart';
 export 'package:my_theme_style/styles/app_icons.dart';
 
 export 'package:go_router/go_router.dart';

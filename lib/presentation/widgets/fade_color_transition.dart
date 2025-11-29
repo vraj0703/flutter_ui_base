@@ -16,6 +16,6 @@ class FadeColorTransition extends StatelessWidget {
   Widget build(BuildContext context) => AnimatedBuilder(
     animation: animation,
     builder: (_, _) =>
-        Container(color: color.withValues(alpha: animation.value)),
+        ColoredBox(color: color.withValues(alpha: animation.value)),
   );
 }

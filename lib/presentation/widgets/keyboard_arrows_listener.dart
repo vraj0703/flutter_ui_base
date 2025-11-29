@@ -1,17 +1,23 @@
 import 'package:flutter_ui_base/common_libs.dart';
 
 class ArrowDir {
-  ArrowDir(this.hz, this.vt);
-  int hz;
-  int vt;
+  const ArrowDir(this.hz, this.vt);
+  final int hz;
+  final int vt;
 
   bool get isNotZero => hz != 0 || vt != 0;
 }
 
 class KeyboardArrowsListener extends StatefulWidget {
-  const KeyboardArrowsListener({super.key, required this.child, required this.onArrow});
+  const KeyboardArrowsListener({
+    super.key,
+    required this.child,
+    required this.onArrow,
+  });
+
   final Widget child;
   final void Function(ArrowDir dir) onArrow;
+
   @override
   State<KeyboardArrowsListener> createState() => _KeyboardArrowsListenerState();
 }
@@ -21,31 +27,42 @@ class _KeyboardArrowsListenerState extends State<KeyboardArrowsListener> {
 
   @override
   Widget build(BuildContext context) {
-    return RawKeyboardListener(
+    return Focus(
       autofocus: true,
       focusNode: _focusNode,
-      onKey: _handleKey,
+      onKeyEvent: _handleKey,
       child: widget.child,
     );
   }
 
-  void _handleKey(RawKeyEvent event) {
-    if (event is! RawKeyDownEvent) return;
-    if (event.repeat) return;
-    final arrowDir = ArrowDir(0, 0);
+  KeyEventResult _handleKey(FocusNode node, KeyEvent event) {
+    if (event is! KeyDownEvent) return KeyEventResult.ignored;
+    // KeyRepeatEvent is a subclass of KeyDownEvent in some versions or separate?
+    // In recent Flutter, KeyRepeatEvent exists.
+    // If we want to ignore repeats:
+    if (event is KeyRepeatEvent) return KeyEventResult.ignored;
+
+    int hz = 0;
+    int vt = 0;
+
     if (event.logicalKey == LogicalKeyboardKey.arrowLeft) {
-      arrowDir.hz = -1;
+      hz = -1;
     } else if (event.logicalKey == LogicalKeyboardKey.arrowRight) {
-      arrowDir.hz = 1;
+      hz = 1;
     }
+
     if (event.logicalKey == LogicalKeyboardKey.arrowUp) {
-      arrowDir.vt = 1;
+      vt = 1;
     } else if (event.logicalKey == LogicalKeyboardKey.arrowDown) {
-      arrowDir.vt = -1;
+      vt = -1;
     }
+
+    final arrowDir = ArrowDir(hz, vt);
     if (arrowDir.isNotZero) {
       widget.onArrow(arrowDir);
+      return KeyEventResult.handled;
     }
+    return KeyEventResult.ignored;
   }
 
   @override

@@ -76,7 +76,10 @@ class _GradientArcPainter extends CustomPainter {
   }
 
   @override
-  bool shouldRepaint(covariant CustomPainter oldDelegate) {
-    return false;
+  bool shouldRepaint(covariant _GradientArcPainter oldDelegate) {
+    return oldDelegate.sweepAngle != sweepAngle ||
+        oldDelegate.startAngle != startAngle ||
+        oldDelegate.strokeWidth != strokeWidth ||
+        oldDelegate.colorPercentages != colorPercentages;
   }
 }

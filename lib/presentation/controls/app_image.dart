@@ -2,7 +2,6 @@ import 'package:flutter/foundation.dart';
 import 'package:flutter_ui_base/domain/logic/retry_image.dart';
 import 'package:image_fade/image_fade.dart';
 import 'package:flutter_ui_base/common_libs.dart';
-
 import 'app_loading_indicator.dart';
 
 class AppImage extends StatefulWidget {
@@ -65,20 +64,30 @@ class _AppImageState extends State<AppImage> {
       syncDuration: widget.syncDuration ?? 0.ms,
       loadingBuilder: (_, value, _) {
         if (!widget.distractor && !widget.progress) return SizedBox();
-        return Center(child: AppLoadingIndicator(value: widget.progress ? value : null, color: widget.color));
+        return Center(
+          child: AppLoadingIndicator(
+            value: widget.progress ? value : null,
+            color: widget.color,
+          ),
+        );
       },
       errorBuilder: (_, _) => Container(
         padding: EdgeInsets.all($insets.xs),
         alignment: Alignment.center,
-        child: LayoutBuilder(builder: (_, constraints) {
-          double size = min(constraints.biggest.width, constraints.biggest.height);
-          if (size < 16) return SizedBox();
-          return Icon(
-            Icons.image_not_supported_outlined,
-            color: $colors.white.withValues(alpha: 0.1),
-            size: min(size, $insets.lg),
-          );
-        }),
+        child: LayoutBuilder(
+          builder: (_, constraints) {
+            double size = min(
+              constraints.biggest.width,
+              constraints.biggest.height,
+            );
+            if (size < 16) return SizedBox();
+            return Icon(
+              Icons.image_not_supported_outlined,
+              color: $colors.white.withValues(alpha: 0.1),
+              size: min(size, $insets.lg),
+            );
+          },
+        ),
       ),
     );
   }

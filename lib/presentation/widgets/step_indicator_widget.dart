@@ -38,23 +38,23 @@ class StepIndicatorWidget extends StatelessWidget {
       },
     );
   }
-}
 
-List<Widget> _getProgressBarWidget(
-  int barCount,
-  int currentbar,
-  barWidth,
-  Color color,
-) {
-  List<Widget> widgetList = [];
-  for (int i = 0; i < barCount; i++) {
-    widgetList.add(
-      Container(
-        height: 6,
-        width: barWidth,
-        color: i <= currentbar ? color : Colors.black,
-      ),
-    );
+  List<Widget> _getProgressBarWidget(
+    int barCount,
+    int currentbar,
+    double barWidth,
+    Color color,
+  ) {
+    List<Widget> widgetList = [];
+    for (int i = 0; i < barCount; i++) {
+      widgetList.add(
+        Container(
+          height: 6,
+          width: barWidth,
+          color: i <= currentbar ? color : Colors.black,
+        ),
+      );
+    }
+    return widgetList;
   }
-  return widgetList;
 }

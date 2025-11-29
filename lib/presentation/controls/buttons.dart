@@ -1,4 +1,5 @@
 import 'package:flutter_ui_base/common_libs.dart';
+import 'package:my_theme_style/styles/app_icon.dart';
 import 'package:flutter_ui_base/presentation/widgets/ignore_pointer.dart';
 
 /// Shared methods across button types
@@ -127,9 +128,7 @@ class AppBtn extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    Color defaultColor = isSecondary
-        ? $colors.white
-        : $colors.greyDark;
+    Color defaultColor = isSecondary ? $colors.white : $colors.greyDark;
     Color textColor = isSecondary ? $colors.black : $styles.colors.white;
     BorderSide side = border ?? BorderSide.none;
 
@@ -185,10 +184,7 @@ class AppBtn extends StatelessWidget {
                 child: Container(
                   decoration: BoxDecoration(
                     borderRadius: BorderRadius.circular($corners.md),
-                    border: Border.all(
-                      color: $colors.secondaryLight,
-                      width: 3,
-                    ),
+                    border: Border.all(color: $colors.secondaryLight, width: 3),
                   ),
                 ),
               ),
@@ -274,6 +270,15 @@ class _CustomFocusBuilderState extends State<_CustomFocusBuilder> {
     if (mounted) {
       setState(() {});
     }
+  }
+
+  @override
+  void dispose() {
+    _focusNode.removeListener(_handleFocusChanged);
+    if (widget.focusNode == null) {
+      _focusNode.dispose();
+    }
+    super.dispose();
   }
 
   @override

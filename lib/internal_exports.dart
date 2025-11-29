@@ -1,11 +1,11 @@
 import 'package:my_localizations/l10n/app_localizations.dart';
 import 'package:my_theme_style/styles/corners.dart';
-import 'package:my_theme_style/styles/icons.dart';
 import 'package:my_theme_style/styles/insets.dart';
 import 'package:my_theme_style/styles/shadows.dart';
 import 'package:my_theme_style/styles/sizes.dart';
 import 'package:my_theme_style/styles/styles.dart';
 import 'package:my_theme_style/styles/texts.dart';
+import 'package:my_theme_style/styles/app_icons.dart';
 import 'package:my_theme_style/styles/times.dart';
 
 import 'flutter_ui_base.dart';

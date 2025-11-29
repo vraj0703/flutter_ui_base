@@ -5,11 +5,12 @@ class BlendMask extends SingleChildRenderObjectWidget {
   final List<BlendMode> blendModes;
   final double opacity;
 
-  const BlendMask(
-      {required this.blendModes,
-      this.opacity = 1.0,
-      super.key,
-      required Widget super.child});
+  const BlendMask({
+    required this.blendModes,
+    this.opacity = 1.0,
+    super.key,
+    required Widget super.child,
+  });
 
   @override
   RenderObject createRenderObject(context) =>
@@ -32,7 +33,7 @@ class RenderBlendMask extends RenderProxyBox {
   void paint(context, offset) {
     // Complex blend modes can be raster cached incorrectly on the Skia backend.
     context.setWillChangeHint();
-    for (var blend in blendModes) {
+    for (final blend in blendModes) {
       context.canvas.saveLayer(
         offset & size,
         Paint()
@@ -41,6 +42,8 @@ class RenderBlendMask extends RenderProxyBox {
       );
     }
     super.paint(context, offset);
-    context.canvas.restore();
+    for (int i = 0; i < blendModes.length; i++) {
+      context.canvas.restore();
+    }
   }
 }
