@@ -1,7 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_test/flutter_test.dart';
 import 'package:flutter_ui_base/presentation/modals/fullscreen_video_viewer.dart';
-import 'package:youtube_player_iframe/youtube_player_iframe.dart';
 
 void main() {
   testWidgets('FullscreenVideoViewer renders player', (
