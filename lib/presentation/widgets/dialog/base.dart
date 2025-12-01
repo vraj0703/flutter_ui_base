@@ -4,6 +4,23 @@ import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_core/core/models/dialog.dart';
 
+void showDialogInfo({
+  required BuildContext context,
+  required DialogEssentials dialogInfo,
+  Function()? dialogClosed,
+}) async {
+  showDialog(
+    context: context,
+    builder: (BuildContext context) {
+      return BaseDialog(data: dialogInfo);
+    },
+  ).whenComplete(() {
+    if (dialogClosed != null) {
+      dialogClosed();
+    }
+  });
+}
+
 class BaseDialog extends StatelessWidget {
   final DialogEssentials data;
 
