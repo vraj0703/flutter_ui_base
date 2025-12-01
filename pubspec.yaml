@@ -23,6 +23,9 @@ dependencies:
   my_localizations:
     git:
       url: https://github.com/vraj0703/my_localizations.git
+  my_logger_metrics:
+    git:
+      url: https://github.com/vraj0703/my_logger_metrics.git
 
   extra_alignments: ^1.0.0+1
   flextras: ^1.0.0
@@ -45,6 +48,7 @@ dependencies:
   collection: ^1.19.1
   webview_flutter: ^4.13.0
   freezed: ^3.2.3
+  permission_handler: ^12.0.1
 
 dev_dependencies:
   flutter_test:

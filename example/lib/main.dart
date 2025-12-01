@@ -148,13 +148,13 @@ class ButtonsDemo extends StatelessWidget {
         child: Column(
           mainAxisAlignment: MainAxisAlignment.center,
           children: [
-            AppBtn(
+            AppButton(
               onPressed: () {},
               semanticLabel: "appBtn",
               child: const Text('AppBtn'),
             ),
             const Gap(20),
-            AppBtn.basic(
+            AppButton.basic(
               onPressed: () {},
               semanticLabel: "appBtn",
               child: const Text('AppBtn.basic'),

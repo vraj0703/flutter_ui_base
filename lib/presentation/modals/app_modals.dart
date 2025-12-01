@@ -41,7 +41,7 @@ class OkModal extends StatelessWidget {
       title: title,
       msg: msg,
       buttons: [
-        AppBtn.from(
+        AppButton.from(
           text: $strings.ok,
           expand: true,
           isSecondary: true,
@@ -66,14 +66,14 @@ class OkCancelModal extends StatelessWidget {
       title: title,
       msg: msg,
       buttons: [
-        AppBtn.from(
+        AppButton.from(
           text: $strings.ok,
           expand: true,
           isSecondary: true,
           onPressed: () => Navigator.of(context).pop(true),
         ),
         Gap($insets.xs),
-        AppBtn.from(
+        AppButton.from(
           text: $strings.cancel,
           expand: true,
           onPressed: () => Navigator.of(context).pop(false),

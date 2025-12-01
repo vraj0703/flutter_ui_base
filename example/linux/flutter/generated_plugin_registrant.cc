@@ -11,6 +11,7 @@
 #include <flutter_localization/flutter_localization_plugin.h>
 #include <flutter_ui_base/flutter_ui_base_plugin.h>
 #include <my_localizations/my_localizations_plugin.h>
+#include <my_logger_metrics/my_logger_metrics_plugin.h>
 #include <my_theme_style/my_theme_style_plugin.h>
 #include <url_launcher_linux/url_launcher_plugin.h>
 
@@ -30,6 +31,9 @@ void fl_register_plugins(FlPluginRegistry* registry) {
   g_autoptr(FlPluginRegistrar) my_localizations_registrar =
       fl_plugin_registry_get_registrar_for_plugin(registry, "MyLocalizationsPlugin");
   my_localizations_plugin_register_with_registrar(my_localizations_registrar);
+  g_autoptr(FlPluginRegistrar) my_logger_metrics_registrar =
+      fl_plugin_registry_get_registrar_for_plugin(registry, "MyLoggerMetricsPlugin");
+  my_logger_metrics_plugin_register_with_registrar(my_logger_metrics_registrar);
   g_autoptr(FlPluginRegistrar) my_theme_style_registrar =
       fl_plugin_registry_get_registrar_for_plugin(registry, "MyThemeStylePlugin");
   my_theme_style_plugin_register_with_registrar(my_theme_style_registrar);

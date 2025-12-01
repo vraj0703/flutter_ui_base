@@ -15,9 +15,9 @@ Widget _buildIcon(
 );
 
 /// The core button that drives all other buttons.
-class AppBtn extends StatelessWidget {
+class AppButton extends StatelessWidget {
   // ignore: prefer_const_constructors_in_immutables
-  AppBtn({
+  AppButton({
     super.key,
     required this.onPressed,
     required this.semanticLabel,
@@ -35,7 +35,7 @@ class AppBtn extends StatelessWidget {
     this.onFocusChanged,
   }) : _builder = null;
 
-  AppBtn.from({
+  AppButton.from({
     super.key,
     required this.onPressed,
     this.enableFeedback = true,
@@ -85,7 +85,7 @@ class AppBtn extends StatelessWidget {
   }
 
   // ignore: prefer_const_constructors_in_immutables
-  AppBtn.basic({
+  AppButton.basic({
     super.key,
     required this.onPressed,
     required this.semanticLabel,

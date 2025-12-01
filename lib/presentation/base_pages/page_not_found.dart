@@ -41,7 +41,7 @@ class PageNotFound extends StatelessWidget {
               LightText(child: Text('Path: $url', style: $textStyle.bodySmall)),
             },
             Gap(70),
-            AppBtn(
+            AppButton(
               minimumSize: Size(200, 0),
               bgColor: $colors.offWhite,
               onPressed: onHomePressed,

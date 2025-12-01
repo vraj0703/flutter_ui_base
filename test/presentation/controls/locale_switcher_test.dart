@@ -9,6 +9,6 @@ void main() {
       const MaterialApp(home: Scaffold(body: LocaleSwitcher())),
     );
 
-    expect(find.byType(AppBtn), findsOneWidget);
+    expect(find.byType(AppButton), findsOneWidget);
   });
 }

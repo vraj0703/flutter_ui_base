@@ -6,7 +6,7 @@ class PopNavigatorUnderlay extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return ExcludeSemantics(
-      child: AppBtn.basic(
+      child: AppButton.basic(
         onPressed: () => Navigator.of(context).pop(),
         semanticLabel: '',
         child: const SizedBox.expand(),

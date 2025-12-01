@@ -25,7 +25,7 @@ class CircleBtn extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     double sz = size ?? defaultSize;
-    return AppBtn(
+    return AppButton(
       onPressed: onPressed,
       semanticLabel: semanticLabel,
       minimumSize: Size(sz, sz),

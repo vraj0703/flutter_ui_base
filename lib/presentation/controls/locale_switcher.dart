@@ -11,7 +11,7 @@ class LocaleSwitcher extends StatelessWidget {
       //await settingsLogic.changeLocale(newLocale);
     }
 
-    return AppBtn.from(
+    return AppButton.from(
         text: $strings.appName,
         onPressed: handleSwapLocale,
         padding: EdgeInsets.all($insets.sm));

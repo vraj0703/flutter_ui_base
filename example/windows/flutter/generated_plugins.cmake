@@ -9,7 +9,9 @@ list(APPEND FLUTTER_PLUGIN_LIST
   flutter_localization
   flutter_ui_base
   my_localizations
+  my_logger_metrics
   my_theme_style
+  permission_handler_windows
   url_launcher_windows
 )
 

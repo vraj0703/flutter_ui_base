@@ -12,14 +12,14 @@ void main() {
     await tester.pumpWidget(
       MaterialApp(
         home: Scaffold(
-          body: AppBtn.from(text: 'Click Me', onPressed: () => pressed = true),
+          body: AppButton.from(text: 'Click Me', onPressed: () => pressed = true),
         ),
       ),
     );
 
     expect(find.text('CLICK ME'), findsOneWidget); // Uppercase
 
-    await tester.tap(find.byType(AppBtn));
+    await tester.tap(find.byType(AppButton));
     await tester.pumpAndSettle();
 
     expect(pressed, isTrue);
@@ -32,7 +32,7 @@ void main() {
     await tester.pumpWidget(
       MaterialApp(
         home: Scaffold(
-          body: AppBtn.from(text: 'Focus Me', onPressed: () {}),
+          body: AppButton.from(text: 'Focus Me', onPressed: () {}),
         ),
       ),
     );
