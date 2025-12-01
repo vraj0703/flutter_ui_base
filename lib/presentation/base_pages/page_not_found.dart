@@ -24,14 +24,6 @@ class PageNotFound extends StatelessWidget {
           mainAxisAlignment: MainAxisAlignment.center,
           children: [
             AppLogo(logoPath: logoPath),
-            Gap(10),
-            Text(
-              'Wonderous',
-              style: $textStyle.titleFont.copyWith(
-                color: $colors.secondaryLight,
-                fontSize: 28,
-              ),
-            ),
             Gap(70),
             Text(
               $strings.pageNotFoundMessage,

@@ -1,5 +1,5 @@
-import 'package:flutter/material.dart';
 import 'package:flutter_test/flutter_test.dart';
+import 'package:flutter_ui_base/common_libs.dart';
 import 'package:flutter_ui_base/presentation/widgets/gradient/gradient_icon.dart';
 
 void main() {
@@ -8,7 +8,7 @@ void main() {
       const MaterialApp(
         home: Scaffold(
           body: GradientIcon(
-            icon: Icons.star,
+            icon: AppIcons.camera,
             size: 50,
             gradient: LinearGradient(colors: [Colors.red, Colors.blue]),
           ),
@@ -17,6 +17,6 @@ void main() {
     );
 
     expect(find.byType(ShaderMask), findsOneWidget);
-    expect(find.byIcon(Icons.star), findsOneWidget);
+    expect(find.byIcon(AppIcons.icon(AppIcons.camera)), findsOneWidget);
   });
 }

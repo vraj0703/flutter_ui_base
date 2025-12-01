@@ -2,6 +2,7 @@ import 'package:flutter_ui_base/common_libs.dart';
 
 class ArrowDir {
   const ArrowDir(this.hz, this.vt);
+
   final int hz;
   final int vt;
 

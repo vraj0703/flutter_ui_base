@@ -2,6 +2,7 @@ import 'dart:async';
 
 import 'package:flutter/foundation.dart';
 import 'package:flutter/rendering.dart';
+import 'package:flutter_ui_base/common_libs.dart';
 
 /// An image provider that retries if loading the bytes failed.
 ///
@@ -55,7 +56,7 @@ class RetryImage extends ImageProvider<Object> {
     ImageStreamCompleter completerToWrap = imageProvider.loadImage(key, decode);
     late ImageStreamListener listener;
 
-    Duration duration = const Duration(milliseconds: 250);
+    Duration duration = $durations.medium1;
     int count = 1;
     listener = ImageStreamListener(
       (ImageInfo image, bool synchronousCall) {

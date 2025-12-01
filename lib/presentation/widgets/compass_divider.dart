@@ -49,7 +49,7 @@ class CompassDivider extends StatelessWidget {
               Transform.rotate(angle: value * pi * 2, child: child),
           child: Icon(
             Icons.explore,
-            size: 32,
+            size: $sizes.iconLg,
             color: compassColor ?? $colors.secondaryLight,
           ),
         ),

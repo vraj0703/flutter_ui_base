@@ -14,19 +14,16 @@ class RenderIgnorePointerKeepSemantics extends RenderProxyBox {
   RenderIgnorePointerKeepSemantics();
 
   @override
-  bool hitTest(BoxHitTestResult result, { required Offset position }) => false;
+  bool hitTest(BoxHitTestResult result, {required Offset position}) => false;
 }
 
 class IgnorePointerAndSemantics extends StatelessWidget {
   final Widget child;
+
   const IgnorePointerAndSemantics({super.key, required this.child});
 
   @override
   Widget build(BuildContext context) {
-    return ExcludeSemantics(
-      child: IgnorePointer(
-        child: child
-      )
-    );
+    return ExcludeSemantics(child: IgnorePointer(child: child));
   }
 }

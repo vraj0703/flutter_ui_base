@@ -1,7 +1,9 @@
 import 'package:flutter/material.dart';
+import 'package:my_theme_style/styles/app_icon.dart';
+import 'package:my_theme_style/styles/app_icons.dart';
 
 class GradientIcon extends StatelessWidget {
-  final IconData icon;
+  final AppIcons icon;
   final double size;
   final Gradient gradient;
 
@@ -15,7 +17,7 @@ class GradientIcon extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return ShaderMask(
-      child: Icon(icon, size: size, color: Colors.white),
+      child: AppIcon(icon, size: size, color: Colors.white),
       shaderCallback: (Rect bounds) {
         return gradient.createShader(bounds);
       },

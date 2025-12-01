@@ -2,6 +2,7 @@ import 'package:flutter_ui_base/common_libs.dart';
 
 class DefaultTextColor extends StatelessWidget {
   const DefaultTextColor({super.key, required this.color, required this.child});
+
   final Color color;
   final Widget child;
 
@@ -16,22 +17,20 @@ class DefaultTextColor extends StatelessWidget {
 
 class LightText extends StatelessWidget {
   const LightText({super.key, required this.child});
+
   final Widget child;
 
   @override
-  Widget build(BuildContext context) => DefaultTextColor(
-        color: Colors.white,
-        child: child,
-      );
+  Widget build(BuildContext context) =>
+      DefaultTextColor(color: $colors.white, child: child);
 }
 
 class DarkText extends StatelessWidget {
   const DarkText({super.key, required this.child});
+
   final Widget child;
 
   @override
-  Widget build(BuildContext context) => DefaultTextColor(
-        color: $colors.black,
-        child: child,
-      );
+  Widget build(BuildContext context) =>
+      DefaultTextColor(color: $colors.black, child: child);
 }

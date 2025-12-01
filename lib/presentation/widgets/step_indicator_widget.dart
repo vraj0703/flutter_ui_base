@@ -1,4 +1,4 @@
-import 'package:flutter/material.dart';
+import 'package:flutter_ui_base/common_libs.dart';
 
 class StepIndicatorWidget extends StatelessWidget {
   final int numberOfSteps;
@@ -49,7 +49,7 @@ class StepIndicatorWidget extends StatelessWidget {
     for (int i = 0; i < barCount; i++) {
       widgetList.add(
         Container(
-          height: 6,
+          height: $insets.sm,
           width: barWidth,
           color: i <= currentbar ? color : Colors.black,
         ),

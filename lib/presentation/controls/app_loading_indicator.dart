@@ -10,8 +10,8 @@ class AppLoadingIndicator extends StatelessWidget {
     final progress = (value == null || value! < .05) ? null : value;
 
     return SizedBox(
-      width: 40,
-      height: 40,
+      width: $sizes.iconLg,
+      height: $sizes.iconLg,
       child: CircularProgressIndicator(
         color: color ?? $colors.secondaryLight,
         value: progress,

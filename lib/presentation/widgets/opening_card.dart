@@ -3,13 +3,14 @@ import 'package:flutter_ui_base/common_libs.dart';
 import 'measurable_widget.dart';
 
 class OpeningCard extends StatefulWidget {
-  const OpeningCard(
-      {super.key,
-      required this.closedBuilder,
-      required this.openBuilder,
-      required this.isOpen,
-      this.background,
-      this.padding});
+  const OpeningCard({
+    super.key,
+    required this.closedBuilder,
+    required this.openBuilder,
+    required this.isOpen,
+    this.background,
+    this.padding,
+  });
 
   final Widget Function(BuildContext) closedBuilder;
   final Widget Function(BuildContext) openBuilder;
@@ -23,6 +24,7 @@ class OpeningCard extends StatefulWidget {
 
 class _OpeningCardState extends State<OpeningCard> {
   Size _size = Size.zero;
+
   @override
   Widget build(BuildContext context) {
     return TweenAnimationBuilder<Size>(
@@ -30,7 +32,8 @@ class _OpeningCardState extends State<OpeningCard> {
       curve: Curves.easeOut,
       builder: (_, value, child) => Stack(
         children: [
-          if (widget.background != null) Positioned.fill(child: widget.background!),
+          if (widget.background != null)
+            Positioned.fill(child: widget.background!),
           Padding(
             padding: widget.padding ?? EdgeInsets.zero,
             child: SizedBox(
@@ -55,7 +58,9 @@ class _OpeningCardState extends State<OpeningCard> {
               onChange: (size) {
                 setState(() => _size = size);
               },
-              child: widget.isOpen ? widget.openBuilder(context) : widget.closedBuilder(context),
+              child: widget.isOpen
+                  ? widget.openBuilder(context)
+                  : widget.closedBuilder(context),
             ),
           ),
         ),

@@ -33,7 +33,7 @@ class AppSnackBar {
           key: const Key('app_snackbar'),
           backgroundColor: (color != null) ? color : $colors.offWhite,
           shape: RoundedRectangleBorder(
-            borderRadius: BorderRadius.circular(10),
+            borderRadius: BorderRadius.circular($sizes.borderMd),
           ),
           behavior: behavior,
           margin: margin,
@@ -41,8 +41,12 @@ class AppSnackBar {
               ? Row(
                   mainAxisAlignment: MainAxisAlignment.center,
                   children: [
-                    Icon(icon, size: 24, color: iconColor ?? style!.color),
-                    const SizedBox(width: 16),
+                    Icon(
+                      icon,
+                      size: $sizes.iconMd,
+                      color: iconColor ?? style!.color,
+                    ),
+                    SizedBox(width: $insets.md),
                     Flexible(child: Text(message!, style: style)),
                   ],
                 )

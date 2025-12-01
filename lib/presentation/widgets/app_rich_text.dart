@@ -19,7 +19,7 @@ class AppRichText extends StatelessWidget {
   final Map<String, dynamic>? widgetTags;
   final TextOverflow overflow;
 
-  static final RegExp _tagPattern = RegExp(r'<(\w+)>(.*?)</\1>|([^<]+)');
+  static final RegExp _tagPattern = RegExp(r'<(\w+)>(.*?)<\/\1>|([^<]+)');
 
   @override
   Widget build(BuildContext context) {
