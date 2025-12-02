@@ -1,8 +1,7 @@
 import 'dart:io';
-
 import 'package:flutter/cupertino.dart';
-import 'package:flutter/material.dart';
 import 'package:flutter_core/core/models/dialog.dart';
+import 'package:flutter_ui_base/common_libs.dart';
 
 void showDialogInfo({
   required BuildContext context,
@@ -44,21 +43,13 @@ class AndroidDialog extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return AlertDialog(
-      title: Text(
-        data.title,
-        style: Theme.of(
-          context,
-        ).textTheme.displayMedium?.copyWith(fontWeight: FontWeight.w400),
-      ),
+      title: Text(data.title, style: Theme.of(context).textTheme.displayMedium),
       content: data.message != null
-          ? Text(data.message!, style: Theme.of(context).textTheme.bodyLarge)
+          ? Text(data.message!, style: $textStyle.bodyLarge)
           : null,
       actions: <Widget>[
         TextButton(
-          child: Text(
-            data.leftOption,
-            style: Theme.of(context).textTheme.labelLarge!,
-          ),
+          child: Text(data.leftOption, style: $textStyle.labelLarge),
           onPressed: () {
             Navigator.of(context).pop();
             data.leftClicked();
@@ -66,10 +57,7 @@ class AndroidDialog extends StatelessWidget {
         ),
         if (data.rightOption != null)
           TextButton(
-            child: Text(
-              data.rightOption!,
-              style: Theme.of(context).textTheme.labelLarge,
-            ),
+            child: Text(data.rightOption!, style: $textStyle.labelLarge),
             onPressed: () {
               Navigator.of(context).pop();
               if (data.rightClicked != null) data.rightClicked!();
@@ -89,26 +77,18 @@ class IosDialog extends StatelessWidget {
   Widget build(BuildContext context) {
     return CupertinoAlertDialog(
       title: Padding(
-        padding: const EdgeInsets.symmetric(horizontal: 12),
-        child: Text(
-          data.title,
-          style: Theme.of(
-            context,
-          ).textTheme.displayMedium?.copyWith(fontWeight: FontWeight.w400),
-        ),
+        padding: EdgeInsets.symmetric(horizontal: $insets.md),
+        child: Text(data.title, style: $textStyle.displayMedium),
       ),
       content: Padding(
-        padding: const EdgeInsets.only(top: 8),
+        padding: EdgeInsets.only(top: $insets.sm),
         child: data.message != null
-            ? Text(data.message!, style: Theme.of(context).textTheme.bodyLarge)
+            ? Text(data.message!, style: $textStyle.bodyLarge)
             : null,
       ),
       actions: <Widget>[
         TextButton(
-          child: Text(
-            data.leftOption,
-            style: Theme.of(context).textTheme.labelLarge,
-          ),
+          child: Text(data.leftOption, style: $textStyle.labelLarge),
           onPressed: () {
             Navigator.of(context).pop();
             data.leftClicked();
@@ -116,10 +96,7 @@ class IosDialog extends StatelessWidget {
         ),
         if (data.rightOption != null)
           TextButton(
-            child: Text(
-              data.rightOption!,
-              style: Theme.of(context).textTheme.labelLarge,
-            ),
+            child: Text(data.rightOption!, style: $textStyle.labelLarge),
             onPressed: () {
               Navigator.of(context).pop();
               if (data.rightClicked != null) data.rightClicked!();
