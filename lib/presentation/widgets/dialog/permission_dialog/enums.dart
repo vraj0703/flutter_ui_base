@@ -1,3 +1,3 @@
 enum PermissionType { camera, audio }
 
-enum PermissionsDialogFlow { speech }
+enum PermissionsDialogFlow { speech, camera }
