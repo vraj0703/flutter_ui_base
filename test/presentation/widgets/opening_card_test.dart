@@ -21,7 +21,6 @@ void main() {
     await tester.pumpAndSettle(); // Animation
 
     // Should be 50x50
-    final sizedBox = tester.widget<SizedBox>(find.byType(SizedBox).first);
     // Note: OpeningCard wraps content in SizedBox with animated size.
     // But there are multiple SizedBoxes (one in builder, one in OpeningCard).
     // The one in OpeningCard has the animated size.

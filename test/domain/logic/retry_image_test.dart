@@ -6,7 +6,6 @@ import 'package:flutter_ui_base/domain/logic/retry_image.dart';
 
 class TestImageProvider extends ImageProvider<Object> {
   final Completer<ImageInfo> _completer = Completer<ImageInfo>();
-  final List<Completer<void>> _loadCompleters = [];
   int loadCallCount = 0;
   final int failCount;
 

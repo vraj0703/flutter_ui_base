@@ -5,6 +5,7 @@ import 'package:flutter_test/flutter_test.dart';
 import 'package:flutter_ui_base/presentation/widgets/dialog/base.dart';
 
 void main() {
+  // ignore: unused_local_variable
   TargetPlatform? debugDefaultTargetPlatformOverride;
 
   testWidgets('BaseDialog renders AndroidDialog on Android', (
